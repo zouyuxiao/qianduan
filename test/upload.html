@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax上传文件和参数</title>
+	<!-- 原文链接：https://blog.csdn.net/qq_15674631/article/details/81095284 -->
+	<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+</head>
+<body>
+	<fieldset>
+    <legend>文件信息</legend>
+    <table class="table" style="width: 100%;">
+        <tr>
+            <th style="width: 20%;">
+                文件:
+            </th>
+            <td>
+                <input id="file" name="file" type="file" style="width:300px;height: 25px"/>
+            </td>
+        </tr>
+        <tr>
+            <th>关键字:</th>
+            <td>
+                <input id="keywords"  style="width:300px;height: 20px"/>
+            </td>
+        </tr>
+        <tr>
+            <th>分类:</th>
+            <td>
+                <input id="fileType"  style="width:300px;height: 25px"/>
+            </td>
+        </tr>
+    </table>
+    <button onclick="" ="uploadFile()">ajax上传文件和参数</button>
+</fieldset>
+</body>
+<script type="text/javascript">
+	function uploadFile() {
+
+            var myform = new FormData();
+
+            myform.append('file', $("#file")[0].files[0]);
+
+            myform.append('fileType',$("#fileType").val());
+
+            myform.append('keywords',$("#keywords").val());
+			
+			console.log(myform);
+
+            /*$.ajax({
+                url: sy.managerServerUrl + "file/uploadFileByFrom",//"http://192.168.5.206:8983/solr/update/extract",
+                type: "POST",
+                data: myform,
+                async: false,
+                contentType: false,
+                processData: false,
+                success: function (result) {
+                    if (result && result.result) {
+                        getFileListPage();
+                    } else {
+                        $.messager.alert("警告", "文件上传失败！", "warning", function () {
+                            var file = document.getElementById('file');
+                            file.value = '';
+                        });
+                    }
+                },
+                error: function (data) {
+                    $.messager.alert("警告", "文件上传失败！", "warning", function () {
+                        var file = document.getElementById('file');
+                        file.value = '';
+                    });
+                }
+            });
+
+        }*/
+</script>
+</html>

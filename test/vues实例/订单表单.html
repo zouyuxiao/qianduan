@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单表单</title>
+	<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+	<style type="text/css">
+		/* 隐藏未编译的变量 */
+		[v-cloak]{
+			display: none;
+		}
+
+		*{
+    	margin:0;
+    	padding:0;
+    }
+
+    body{
+    	font:15px/1.3 'Open Sans', sans-serif;
+    	/* 前者是font-size，后者是line-height，这个没有问题。
+		12px/1.5，是指font-size:12px;以及line-height:1.5em，即字符高度的1.5倍。 */
+    	color: #5e5b64;
+    	text-align:center;
+    }
+
+    a, a:visited {
+    	outline:none;
+    	color:#389dc1;
+    }
+
+    a:hover{
+    	text-decoration:none;
+    }
+
+    section, footer, header, aside, nav{
+    	display: block;
+    }
+
+    /*-------------------------
+    	订单表单
+    --------------------------*/
+
+    form{
+    	background-color: #61a1bc;
+    	border-radius: 2px;
+    	box-shadow: 0 1px 1px #ccc; /* 添加一个或多个阴影 */
+    	width: 400px;
+    	padding: 35px 60px;
+    	margin: 50px auto;
+    }
+
+    form h1{
+    	color:#fff;
+    	font-size:64px;
+    	font-family:'Cookie', cursive;
+    	font-weight: normal;
+    	line-height:1;
+    	text-shadow:0 3px 0 rgba(0,0,0,0.1);	/* 向文本设置阴影 */
+    }
+
+    form ul{
+    	list-style:none;
+    	color:#fff;
+    	font-size:20px;
+    	font-weight:bold;
+    	text-align: left;
+    	margin:20px 0 15px;
+    }
+
+    form ul li{
+    	padding:20px 30px;
+    	background-color:#e35885;
+    	margin-bottom:8px;
+    	box-shadow:0 1px 1px rgba(0,0,0,0.1);
+    	cursor:pointer;	/* 规定要显示的光标的类型（形状） */
+    }
+
+    form ul li span{
+    	float:right;
+    }
+
+    form ul li.active{
+    	background-color:#8ec16d;
+    }
+
+    div.total{
+    	border-top:1px solid rgba(255,255,255,0.5);
+    	padding:15px 30px;
+    	font-size:20px;
+    	font-weight:bold;
+    	text-align: left;
+    	color:#fff;
+    }
+
+    div.total span{
+    	float:right;
+    }  
+	</style>
+</head>
+<body>
+	<!-- v-cloak隐藏未编译的变量，直到vue实例准备就绪 -->
+	<form id="main" v-cloak>
+		<h1>Service</h1>
+		<ul>
+			<!-- 循环输出services数组，设置选项点击后的样式 -->
+			<li v-for="sercice in services" v-on:click="toggleActive(sercice)" v-bind:class="{'active':sercice.active}">
+				{{sercice.name}}<span>{{sercice.price | currency}}</span>
+			</li>
+		</ul>
+		<div class="total">
+			<!-- 计算所有服务的价格，并格式化货币 -->
+			Total：<span>{{total() | currency}}</span>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	// 自定义过滤器"currency"
+	Vue.filter('currency',function(value) {
+		return '$' + value.toFixed(2);/*toFixed把数字舍入为仅有2位小数的数字*/
+	});
+	var demo = new Vue({
+		el: '#main',
+		data:{
+			//定义模型属性the model properties. the view will loop
+			// 视图将循环输出数组数据
+			services: [
+				{
+					name: 'web test',
+					price: 300,
+					active : true
+				},
+				{
+					name: 'test2',
+					price: 2300,
+					active:false
+				},
+				{
+					name: 'web 选项',
+					price: 520,
+					active : false
+				},
+				{
+					name: '哈哈',
+					price: 1314,
+					active:false
+				},
+			]
+		},
+		methods: {
+	    	toggleActive: function(s){
+	            s.active = !s.active;
+	    	},
+	    	total: function(){
+
+	        	var total = 0;
+
+	        	this.services.forEach(function(s){
+	        		if (s.active){
+	        			total += s.price;
+	        		}
+	        	});
+
+	    	   return total;
+	        }
+	    }
+	});
+</script>
+</html>

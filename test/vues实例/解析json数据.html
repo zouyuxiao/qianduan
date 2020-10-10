@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script><!--vue.min.js的库-->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><!--jQuery库-->
+   
+</head>
+<body>
+    <h3>谷歌浏览器可能不兼容，存在跨域问题</h3>
+    <div id="main">
+        <div v-for="item in rows">              
+            <p>姓名:{{item.name}}</p>               
+            <p>昵称:{{item.nick}}</p>               
+        </div>
+    </div>
+    <div id="goods">
+        <!-- <div v-for="item in goods">
+            <div v-html="goods">
+                <p>{{item}}</p>
+                <p>{{item}}</p>
+            </div>
+        </div> -->
+        <table cellpadding="0" cellspacing="0" class="clearfix bigTable" id='downloaddata'>
+          <tr v-for='(item, index) in goods'>
+            <template v-for='items in item'>
+              <template  v-for='(itemss, indexs) in items'  v-if='indexs !== "2"'>
+                <tr>
+                    <td>{{itemss}}</td>
+                </tr>
+              </template>
+            </template>
+          </tr>
+        </table>
+    </div>
+    
+</body>
+<script>
+    // 存在跨域问题
+    $(document).ready(function () {
+        $.getJSON("./test.json", function (result, status) {
+            var v = new Vue({
+                el: '#main',
+                data: {
+                    rows: result
+                }
+            })
+        });
+    });
+    $.ajax({
+        url: "http://suggest.taobao.com/sug?code=utf-8&q=鞋子&callback=cb",
+        type: 'get',
+        dataType:'jsonp',
+        success:function(result){
+            console.log(JSON.stringify(result));
+            //{"result":[["鞋子2019新款女","2398552.655949129"],["鞋子女冬","2240627.3298815265"],["鞋子 男","3226267.033575817"],["鞋子女秋冬百搭","823064.4720585753"],["鞋子男潮鞋","337190.80891216395"],["鞋子女冬加绒","789898.8766265749"],["鞋子女2019潮鞋","529717.2396883751"],["鞋子 男 潮鞋 百搭","304989.95411842817"],["鞋子男冬","1705543.6822465472"],["鞋子男韩版潮流 百搭","342035.41416177107"]]}
+            
+            console.log("test--->"+result.result[0][0])
+            var vm = new Vue({
+                el: "#goods",
+                data:{
+                    goods:result
+                },
+                methods:{
+                    // this.goods = "ceshis"
+                }
+                
+                
+            })
+        }
+    });
+
+    
+</script>
+ 
+</html>
+<!-- 原文链接：https://blog.csdn.net/weixin_44763569/article/details/90439665 -->

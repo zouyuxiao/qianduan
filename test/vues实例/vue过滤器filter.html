@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title></title>
+	<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="out">
+        <h1>过滤器-变换输出形式</h1>
+        <ul>
+            <li v-for="(item,i) in arr">{{i}}--{{item.name}}-{{item.status | status}}</li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.filter('status',function(item){
+        if(item==0){
+            return '待支付'
+        }else{
+            return '订单完成'
+        }
+    })
+    var vm=new Vue({
+        el:"#out",
+        data:{
+            arr:[{name:'衣服',status:0},{name:'帽子',status:1},{name:'AJ鞋子',status:0}]
+        }
+    })
+</script>
+</html>
+<!-- 原文链接：https://blog.csdn.net/weixin_43868692/article/details/85340565 -->

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>富文本上传图片</title>
+	<meta charset="utf-8">
+	<!-- 原文链接：https://blog.csdn.net/guojiao1006/article/details/84785924 -->
+</head>
+<body>
+<form action="xxxx.do" name="Form" id="Form" method="post">
+ 
+<tr>
+       <td style="width:75px;text-align: right;padding-top: 13px;">封面图:</td>
+       <td ><button type="button" class="layui-btn layui-btn-normal" id="shangchuan">选择文件</button><br />
+       <input id="TUPIAN" name="TUPIAN" value="${pd.TUPIAN}" type="text" readonly="readonly" style="margin-top: 10px;width: 98%"/> </td>
+</tr>
+ 
+<tr>
+      <td style="width:75px;text-align: right;padding-top: 13px;">内容:</td>
+      <td><textarea type="text" name="NEIRONG" id="NEIRONG">${pd.NEIRONG}</textarea></td>
+ </tr>
+</form>
+</body>
+</html>

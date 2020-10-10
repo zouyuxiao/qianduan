@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>全选</title>
+	<meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<ul id="list">
+	　　<li><label><input type="checkbox" value="1"/>1.时间管理</label></li>
+	　　<li><label><input type="checkbox" value="2"/>2.模块管理</label></li>
+	　　<li><label><input type="checkbox" value="3"/>3.分析管理</label></li>
+	　　<li><label><input type="checkbox" value="4"/>4.意义管理</label></li>
+	　　<li><label><input type="checkbox" value="5"/>5.重点管理</label></li>
+	</ul>
+	<div id="select">
+	　　<input type="checkbox" class="all" />
+	　　<button class="selectAll">全选</button>
+	　　<button class="unSelect">全不选</button>
+	　　<button class="reverse">反选</button>
+	　　<button class="getValue">获取所有选中的值</button>
+	 </div>
+</body>
+<script type="text/javascript">
+	//全选或全不选
+	$("#select .all").click(function(){
+	    if(this.checked){
+	        $("#list :checkbox").prop("checked",true);
+	        var arr = [];
+		    $("#list :checkbox:checked").each(function(i){
+		        arr[i] = $(this).val();
+		    })
+		    console.log("当前所有选中的值： " + arr.join(" , "));
+	    }else{
+	        $("#list :checkbox").prop("checked",false);
+	    }
+	})
+	//全选
+	$("#select .selectAll").click(function(){
+	    $("#list :checkbox,#select .all").prop("checked",true);
+	})
+	//全不选
+	$("#select .unSelect").click(function(){
+	    $("#list :checkbox,#select .all").prop("checked",false);
+	})
+	//反选
+	$("#select .reverse").click(function(){
+	    $("#list :checkbox").each(function(){
+	        $(this).prop("checked",!$(this).prop("checked"));    
+	    })
+	    isAllChecked();
+	})
+	//获取所有选中的值
+	$("#select .getValue").click(function(){
+	    var arr = [];
+	    $("#list :checkbox:checked").each(function(i){
+	        arr[i] = $(this).val();
+	    })
+	    console.log("当前所有选中的值： " + arr.join(" , "));
+	})
+	$("#list :checkbox").click(function(){
+	    isAllChecked();
+	})
+	//检测是否全选的函数
+	function isAllChecked(){
+	    var len = $("#list :checkbox").size();
+	    var count = 0;
+	    $("#list :checkbox").each(function(){
+	        if($(this).prop("checked")==true){
+	            count++;
+	        }
+	    })
+	    if(count==len){
+	        $("#select .all").prop("checked",true);
+	    }else{
+	        $("#select .all").prop("checked",false);
+	    }    
+	};
+</script>
+</html>

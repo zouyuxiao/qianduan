@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Step1.对于vue,可以用cdn -->
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <style>
+        #app div{
+            padding: 2%;
+            margin-bottom: 1%;
+            border-bottom: 1px solid #ddd;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <!-- item是循环名字,items是循环的数组 -->
+        <div v-for="item in items">
+            {{item}}
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello World!',
+                items:[10,2,3,4,5]
+            }
+        });
+    </script>
+</body>
+
+</html>

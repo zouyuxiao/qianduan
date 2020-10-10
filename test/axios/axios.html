@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>axios</h1>
+    <a href="https://www.kancloud.cn/yunye/axios/234845">官方文档</a>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    var test = axios('http://192.168.3.31:8031/user/list');
+    console.log("test--->"+test);
+    console.log("--"+JSON.stringify(axios('http://192.168.3.31:8031/user/list')))
+    for(var i in test){
+        console.log(i+"--"+test[i])
+    }
+</script>
+</html>

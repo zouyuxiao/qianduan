@@ -1,0 +1,265 @@
+<html lang="zh"><head>
+    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>修改会员列表</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/font-awesome.min.css" rel="stylesheet">
+	<!-- bootstrap-table 表格插件样式 -->
+	<link href="/ajax/libs/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	<link href="/css/animate.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/ruoyi/css/ry-ui.css" rel="stylesheet">
+
+    
+    <link href="/ajax/libs/datapicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="http://localhost/ajax/libs/layer/theme/default/layer.css?v=3.1.1" id="layuicss-layer"><link rel="stylesheet" href="http://localhost/ajax/libs/layer/theme/moon/style.css" id="layuicss-thememoonstylecss"></head>
+<body class="white-bg">
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <form class="form-horizontal m" id="form-member-edit" novalidate="novalidate">
+        <input name="memberid" type="hidden" id="memberid" value="47589">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">会员名称：</label>
+            <div class="col-sm-8">
+                <input name="membername" class="form-control" type="text" readonly="readonly" required="" id="membername" value="陈永祥" aria-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">手机号：</label>
+            <div class="col-sm-8">
+                <input name="mobile" class="form-control" type="text" readonly="readonly" required="" id="mobile" value="13622443648" aria-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">操作码：</label>
+            <div class="col-sm-8">
+                <input name="membercode" class="form-control" type="text" id="membercode" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">生日：</label>
+            <div class="col-sm-8">
+                <div class="input-group date">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <input name="birthday" value="1984-08-13" class="form-control" placeholder="yyyy-MM-dd" type="text" readonly="readonly">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">年龄：</label>
+            <div class="col-sm-8">
+                <input name="age" class="form-control" type="text" readonly="readonly" id="age" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">电话：</label>
+            <div class="col-sm-8">
+                <input name="tel" class="form-control" type="text" readonly="readonly" id="tel" value="-">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">邮箱：</label>
+            <div class="col-sm-8">
+                <input name="email" class="form-control" type="text" readonly="readonly" id="email" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">身份证：</label>
+            <div class="col-sm-8">
+                <input name="idcard" class="form-control" type="text" readonly="readonly" id="idcard" value="445381198408132830">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">性别：</label>
+            <div class="col-sm-8">
+                <select name="sex" class="form-control m-b" disabled="disabled" required="" aria-required="true">
+                    <option value="0" selected="selected">男</option>
+                    <option value="1">女</option>
+                    <option value="2">未知</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">员工标志：</label>
+            <div class="col-sm-8">
+                <div class="radio-box">
+                    <div class="iradio-blue"><input type="radio" id="200" name="staffFlag" value="0" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                    <label for="200">否</label>
+                </div>
+                <div class="radio-box">
+                    <div class="iradio-blue"><input type="radio" id="201" name="staffFlag" value="1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                    <label for="201">是</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">员工ID：</label>
+            <div class="col-sm-8">
+                <input name="staffEmpid" class="form-control" type="text" id="staffEmpid" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">会员卡号：</label>
+            <div class="col-sm-8">
+                <input name="cardno" class="form-control" type="text" required="" id="cardno" value="1411973" aria-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">会员卡类型：</label>
+            <div class="col-sm-8">
+                <select name="cardtypeid" id="cardtypeid" class="form-control m-b">
+                    <option value="3">员工卡</option>
+                    <option value="1">金卡</option>
+                    <option value="2" selected="selected">普通卡</option>
+                    <option value="4">钻石卡</option>
+                    <option value="5">银卡</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">使用状态：</label>
+            <div class="col-sm-8">
+                <select name="usestatus" class="form-control m-b">
+                    <option value="1" selected="selected">正常</option>
+                    <option value="2">挂失</option>
+                    <option value="3">作废</option>
+                    <option value="5">停用</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">国家：</label>
+            <div class="col-sm-8">
+                <select name="country" class="form-control m-b">
+                    <option value="中国" selected="selected">中国</option>
+                </select>
+                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 代码生成请选择字典属性</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">省：</label>
+            <div class="col-sm-8">
+                <select name="province" class="form-control m-b valid" id="provinceEdit" aria-invalid="false">
+                    <option value="2">北京</option>
+                    <option value="3">安徽</option>
+                    <option value="4">福建</option>
+                    <option value="5">甘肃</option>
+                    <option value="6" selected="selected">广东</option>
+                    <option value="7">广西</option>
+                    <option value="8">贵州</option>
+                    <option value="9">海南</option>
+                    <option value="10">河北</option>
+                    <option value="11">河南</option>
+                    <option value="12">黑龙江</option>
+                    <option value="13">湖北</option>
+                    <option value="14">湖南</option>
+                    <option value="15">吉林</option>
+                    <option value="16">江苏</option>
+                    <option value="17">江西</option>
+                    <option value="18">辽宁</option>
+                    <option value="19">内蒙古</option>
+                    <option value="20">宁夏</option>
+                    <option value="21">青海</option>
+                    <option value="22">山东</option>
+                    <option value="23">山西</option>
+                    <option value="24">陕西</option>
+                    <option value="25">上海</option>
+                    <option value="26">四川</option>
+                    <option value="27">天津</option>
+                    <option value="28">西藏</option>
+                    <option value="29">新疆</option>
+                    <option value="30">云南</option>
+                    <option value="31">浙江</option>
+                    <option value="32">重庆</option>
+                    <option value="33">香港</option>
+                    <option value="34">澳门</option>
+                    <option value="35">台湾</option>
+                </select>
+
+                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 代码生成请选择字典属性</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">市：</label>
+            <div class="col-sm-8">
+                <select name="city" class="form-control m-b valid" id="cityEdit" aria-invalid="false"><option value="111">贵阳</option><option value="112">安顺</option><option value="113">毕节</option><option value="114">六盘水</option><option value="115">黔东南</option><option value="116">黔南</option><option value="117">黔西南</option><option value="118">铜仁</option><option value="119">遵义</option></select>
+                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 代码生成请选择字典属性</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">县：</label>
+            <div class="col-sm-8">
+                <select name="district" class="form-control m-b valid" id="districtEdit"><option value="962">南明区</option><option value="963">云岩区</option><option value="964">花溪区</option><option value="965">乌当区</option><option value="966">白云区</option><option value="967">小河区</option><option value="968">金阳新区</option><option value="969">新天园区</option><option value="970">清镇市</option><option value="971">开阳县</option><option value="972">修文县</option><option value="973">息烽县</option></select>
+                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 代码生成请选择字典属性</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">地址：</label>
+            <div class="col-sm-8">
+                <input name="address" class="form-control" type="text" readonly="readonly" id="address" value="罗定市围底镇围底圩">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">备注：</label>
+            <div class="col-sm-8">
+                <input name="memo" class="form-control" type="text" id="memo" value="（会员部积分清零20180905）0136">
+            </div>
+        </div>
+    </form>
+</div>
+
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- bootstrap-table 表格插件 -->
+	<script src="/ajax/libs/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="/ajax/libs/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script src="/ajax/libs/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+	<script src="/ajax/libs/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+	<script src="/ajax/libs/bootstrap-table/extensions/columns/bootstrap-table-fixed-columns.js"></script>
+	<!-- jquery-validate 表单验证插件 -->
+	<script src="/ajax/libs/validate/jquery.validate.min.js"></script>
+	<script src="/ajax/libs/validate/messages_zh.min.js"></script>
+	<script src="/ajax/libs/validate/jquery.validate.extend.js"></script>
+	<!-- jquery-validate 表单树插件 -->
+	<script src="/ajax/libs/bootstrap-treetable/bootstrap-treetable.js"></script>
+	<!-- jquery-export 表格导出插件 -->
+	<script src="/ajax/libs/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+	<script src="/ajax/libs/bootstrap-table/extensions/export/tableExport.js"></script>
+	<!-- 遮罩层 -->
+	<script src="/ajax/libs/blockUI/jquery.blockUI.js"></script>
+    <script src="/ajax/libs/iCheck/icheck.min.js"></script>
+	<script src="/ajax/libs/layer/layer.min.js"></script>
+	<script src="/ajax/libs/layui/layui.js"></script>
+	<script src="/ruoyi/js/common.js?v=4.1.0"></script>
+	<script src="/ruoyi/js/ry-ui.js?v=4.1.0"></script>
+	<script> var ctx = "\/"; </script>
+
+
+    <script src="/ajax/libs//datapicker/bootstrap-datetimepicker.min.js"></script>
+
+<script src="/js/member/member.js"></script>
+<script type="text/javascript">
+    var prefix = ctx + "mem/member";
+    $("#form-member-edit").validate({
+        focusCleanup: true
+    });
+
+    function submitHandler() {
+        if ($.validate.form()) {
+            $.operate.save(prefix + "/edit", $('#form-member-edit').serialize());
+        }
+    }
+
+    $("input[name='birthday']").datetimepicker({
+        format: "yyyy-mm-dd",
+        minView: "month",
+        autoclose: true
+    });
+
+</script><div class="datetimepicker datetimepicker-dropdown-bottom-right dropdown-menu" style="left: 268.339px; z-index: 1010;"><div class="datetimepicker-minutes" style="display: none;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">13 八月 1984</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="minute active">0:00</span><span class="minute">0:05</span><span class="minute">0:10</span><span class="minute">0:15</span><span class="minute">0:20</span><span class="minute">0:25</span><span class="minute">0:30</span><span class="minute">0:35</span><span class="minute">0:40</span><span class="minute">0:45</span><span class="minute">0:50</span><span class="minute">0:55</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">今天</th></tr><tr><th colspan="7" class="clear" style="display: none;">清除</th></tr></tfoot></table></div><div class="datetimepicker-hours" style="display: none;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">13 八月 1984</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="hour active">0:00</span><span class="hour">1:00</span><span class="hour">2:00</span><span class="hour">3:00</span><span class="hour">4:00</span><span class="hour">5:00</span><span class="hour">6:00</span><span class="hour">7:00</span><span class="hour">8:00</span><span class="hour">9:00</span><span class="hour">10:00</span><span class="hour">11:00</span><span class="hour">12:00</span><span class="hour">13:00</span><span class="hour">14:00</span><span class="hour">15:00</span><span class="hour">16:00</span><span class="hour">17:00</span><span class="hour">18:00</span><span class="hour">19:00</span><span class="hour">20:00</span><span class="hour">21:00</span><span class="hour">22:00</span><span class="hour">23:00</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">今天</th></tr><tr><th colspan="7" class="clear" style="display: none;">清除</th></tr></tfoot></table></div><div class="datetimepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">八月 1984</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr><tr><th class="dow">日</th><th class="dow">一</th><th class="dow">二</th><th class="dow">三</th><th class="dow">四</th><th class="dow">五</th><th class="dow">六</th></tr></thead><tbody><tr><td class="day old">29</td><td class="day old">30</td><td class="day old">31</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day active">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">今天</th></tr><tr><th colspan="7" class="clear" style="display: none;">清除</th></tr></tfoot></table></div><div class="datetimepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">1984</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="month">一月</span><span class="month">二月</span><span class="month">三月</span><span class="month">四月</span><span class="month">五月</span><span class="month">六月</span><span class="month">七月</span><span class="month active">八月</span><span class="month">九月</span><span class="month">十月</span><span class="month">十一月</span><span class="month">十二月</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">今天</th></tr><tr><th colspan="7" class="clear" style="display: none;">清除</th></tr></tfoot></table></div><div class="datetimepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">1980-1989</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="year ">1979</span><span class="year">1980</span><span class="year">1981</span><span class="year">1982</span><span class="year">1983</span><span class="year active">1984</span><span class="year">1985</span><span class="year">1986</span><span class="year">1987</span><span class="year">1988</span><span class="year">1989</span><span class="year ">1990</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">今天</th></tr><tr><th colspan="7" class="clear" style="display: none;">清除</th></tr></tfoot></table></div></div>
+
+</body></html>

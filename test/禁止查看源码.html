@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS禁止查看网页源代码的简单实现方法</title>
+    <!-- 
+    js 问件在body里才可以实现
+    在项目开发中有时会遇到不想让别人轻易查看到网站的源代码信息，我们有多种方法可以轻保护自己的网站源码。下面会介绍三种使用JavaScript来保护自己的网站源码的方法：
+    最常见查看网站源码的无非有这四种：
+    F12
+    鼠标右键单击
+    Ctrl+Shift+I
+    Ctrl+U
+    以上的三种方法都可以查看到网站的源代码，我们可以通过使用JavaScript来屏蔽掉这三种状态从而实现禁止查看源代码效果。下面直接放源码。
+    -->
+</head>
+<body style="text-alight:center" onclick="noMenuOne()">
+    <h1>JS禁止查看网页源代码的简单实现方法</h1>
+    <script type="text/javascript">
+        window.onload = function(){
+            //屏蔽键盘事件
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    alert("版权所有")
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    alert("版权所有")
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) && (e.keyCode == 121)){
+                    alert("版权所有")
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    alert("版权所有")
+                    return false;
+                }
+            };
+            //屏蔽鼠标右键
+            document.oncontextmenu = function (){
+                alert("版权所有")
+                return false;
+            }
+        };
+
+
+        //方法一 
+        /*function noMenuOne() { 
+            alert('禁止右键菜单!'); 
+            return false; 
+        } 
+        document.oncontextmenu = noMenuOne; 
+        //方法二 
+        function noMenuTwo(){ 
+            if(event.button == 2){ 
+                alert('禁止右键菜单2!'); 
+                return false; 
+            } 
+        } 
+        document.onmousedown = noMenuTwo; */
+
+        function noCopy(){ 
+            alert("禁止使用Ctrl+C进行复制操作!"); 
+            event.returnValue = false; 
+        } 
+        document.oncontextmenu = noCopy;
+    </script>
+</body>
+</html>

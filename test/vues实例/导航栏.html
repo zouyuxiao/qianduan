@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>导航菜单</title>
+	<meta charset="utf-8">
+	<script src="./vue.js"></script>
+	<style type="text/css">
+		#center{
+			width: 100%;
+			height: 50rem;
+		}
+		#main nav{
+			/* position: absolute; */
+			height: 2rem;
+			background: greenyellow;	
+			width: 50%;
+			margin: 0 auto;
+		}
+		#main nav a{
+			text-align: center;
+			margin: 2rem;
+		}
+		iframe{
+			border: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<nav>
+			<a href="#" class="" v-on:click="makeActive('666','liuyan2')">hello</a>
+			<a href="#" class="" v-on:click="makeActive('555','liuyan3')">HelloWord</a>
+			<a href="#" class="" v-on:click="makeActive('333','liuyan7')">hahaha</a>
+			<a href="#" class="" v-on:click="makeActive('222','liuyan5')">good</a>
+		</nav>
+		<p>
+			选择的是：<b>{{active}}</b>
+			<br/>
+			<div id="center" v-html="text">
+				{{text}}
+			</div>
+		</p>
+	</div>
+
+</body>
+<script type="text/javascript">
+	var demo = new Vue({
+		// dom元素，挂载视图模型
+		el: '#main',
+		// 定义属性，并设置初始化值
+		data:{
+			active:'home',
+			text:'cart'
+		},
+		// 点击菜单使用函数
+		methods:{
+			makeActive:function (item,html) {
+				// 模型改变,视图更新
+				this.active = item;
+				this.text = "<iframe src='../"+html+".html'  width='100%' height='100%'>内容主题</iframe>"
+				// location.href="../"+html+".html"
+				ceshi();
+
+			}
+		} 
+	});
+	function ceshi(){
+		console.log('测试成功')
+	}
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+    <script type="text/javascript" src="date.format.js"></script>
+    <script type="text/javascript" src="jquerysession.js"></script>
+</head>
+	
+<body>
+    <ul>
+    	<li>
+    		小小：这个不错<a href="" class="reply_btn">回复</a>
+    		<p>2020-2-21:18:09:00</p>
+    	</li>
+    	<li>
+    		东东@小小：有多错<a href="" class="reply_btn">回复</a>
+    		<p>2020-2-21:18:09:00</p>
+    	</li>
+    	<li>
+    		小小@东东：你猜<a href="" class="reply_btn">回复</a>
+    		<p>2020-2-21:18:09:00</p>
+    	</li>
+    </ul>
+</body>
+<script type="text/javascript">
+	$.session.set('test', '测试session')
+	console.log($.session.get('name'));
+	console.log($.session.get('test'));
+    $(function(){
+        //页面加载完毕后开始执行的事件
+        // console.log("time--->"+new data())
+        $(".reply_btn").click(function(){
+        	$(".reply_btn").attr("href","javascript:;"); 
+            $(".reply_textarea").remove();
+            $(this).parent().append("<div class='reply_textarea'><textarea name='testConnect' cols='40' rows='5'></textarea><br/><input type='button' value='发表' onclick='test()'/></div>");
+        });
+    });
+    
+    function test() {
+    	var connet = $(".reply_textarea textarea[name='testConnect']").val()
+    	console.log("connet"+connet)
+    	$(".reply_textarea").css("display","none"); 
+    	// console.log("测试");
+    	var date = new Date().format("y-m-d h:m:s");
+    	console.log("time"+date)
+    	var li = "<li>测试@测试一下："+ connet +"<a href='' class='reply_btn'>回复</a></li>"
+    	var p = "<p>"+date+"</p>"
+    	var ul = $("ul").append(li).append(p)
+    	console.log(ul)
+    }
+
+
+</script>
+</html>

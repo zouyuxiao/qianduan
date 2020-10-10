@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<body class="fixed-sidebar full-height-layout gray-bg theme-dark skin-blue mini-navbar" style="overflow: hidden;">
+<div id="wrapper">
+
+    <!--左侧导航开始-->
+    <nav class="navbar-default navbar-static-side" role="navigation" style="display: block;">
+        <div class="nav-close">
+            <i class="fa fa-times-circle"></i>
+        </div>
+        <div class="slimScrollDiv" style="position: relative; width: auto; height: 100%; overflow: hidden;"><div class="sidebar-collapse" style="width: auto; height: 100%;">
+            <ul class="nav in" id="side-menu">
+                <a href="/index">
+                  <li class="logo hide">
+				    <span class="logo-lg">智能商家服务中心</span>
+            	  </li>
+            	</a>
+            	<li>
+            		<div class="user-panel">
+            			<a class="menuItem" title="个人中心" href="/system/user/profile" data-index="0"> 
+            				<div class="hide">个人中心</div>
+					        <div class="pull-left image">
+		                    	<img src="/img/profile.jpg" class="img-circle" alt="User Image">
+					        </div>
+				        </a>
+				        <div class="pull-left info">
+				          <p>admin</p>
+				          <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+				          <a href="logout" style="padding-left:5px;"><i class="fa fa-sign-out text-danger"></i> 注销</a>
+				        </div>
+				    </div>
+            	</li>
+                <li>
+                    <a href="#"><i class="fa fa-home"></i> <span class="nav-label">主页</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a class="menuItem" href="/system/main" data-index="1">首页</a></li>
+                    </ul>
+                </li>
+                <li>
+                	<a href="#">
+                		<i class="fa fa-gear"></i>
+                    	<span class="nav-label">系统管理</span> 
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="/base/manage" data-index="2">服务器管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/system/role" data-index="3">角色管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/system/menu" data-index="4">菜单管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/system/post" data-index="5">岗位管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/system/dict" data-index="6">字典管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/system/config" data-index="7">参数设置</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/system/notice" data-index="8">通知公告</a>
+							
+							
+						</li>
+						<li>
+							
+							<a href="#">日志管理<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/monitor/operlog" data-index="9">操作日志</a></li>
+								<li><a class="menuItem" href="/monitor/logininfor" data-index="10">登录日志</a></li>
+							</ul>
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a href="#">
+                		<i class="fa fa-cloud"></i>
+                    	<span class="nav-label">基础资料</span> 
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="/system/user" data-index="11">人员管理</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/base/entry" data-index="12">项目公司</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/base/region" data-index="13">门店区域管理</a>
+							
+							
+						</li>
+						<li>
+							
+							<a href="#">门店管理<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/base/store/basic" data-index="14">门店基础资料管理</a></li>
+							</ul>
+						</li>
+						<li>
+							<a class="menuItem" href="/system/dept" data-index="15">组织结构管理</a>
+							
+							
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a href="#">
+                		<i class="fa fa-address-card"></i>
+                    	<span class="nav-label">会员中心</span> 
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="/mem/member" data-index="16">会员管理</a>
+							
+							
+						</li>
+						<li>
+							
+							<a href="#">会员权益<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/mem/condition" data-index="17">会员积分规则</a></li>
+								<li><a class="menuItem" href="/mem/integralinfo" data-index="18">会员积分汇总</a></li>
+							</ul>
+						</li>
+						<li>
+							
+							<a href="#">会员标签<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/tag/condition" data-index="19">标签条件</a></li>
+								<li><a class="menuItem" href="/tag/rule" data-index="20">会员标签规则</a></li>
+								<li><a class="menuItem" href="/tag/membertag" data-index="21">会员标签</a></li>
+								<li><a class="menuItem" href="/tag/memberlist" data-index="22">会员标签明细</a></li>
+								<li><a class="menuItem" href="/tag/set" data-index="23">会员标签规则设置</a></li>
+							</ul>
+						</li>
+						<li>
+							<a class="menuItem" href="/mem/cardtype" data-index="24">会员卡分类</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/marketing/marketac/getList" data-index="25">会员高级查询</a>
+							
+							
+						</li>
+					</ul>
+                </li>
+                <li class="active">
+                	<a href="#">
+                		<i class="fa fa-gift"></i>
+                    	<span class="nav-label">营销管理</span> 
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse in">
+						<li class="selected">
+							<a class="menuItem" href="/coupon/apprange" data-index="26">礼券模板定义</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/coupon/couponlist" data-index="27">礼券明细</a>
+							
+							
+						</li>
+						<li>
+							
+							<a href="#">会员精准营销<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/marketing/option" data-index="28">精准营销选项</a></li>
+								<li><a class="menuItem" href="/marketing/marketac" data-index="29">精准营销任务</a></li>
+								<li><a class="menuItem" href="/mem/member/getMarketAccurate" data-index="30">精准营销</a></li>
+							</ul>
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a href="#">
+                		<i class="fa fa-area-chart"></i>
+                    	<span class="nav-label">订单管理</span> 
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="/order/retail" data-index="31">零售流水</a>
+							
+							
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a href="#">
+                		<i class="fa fa-bars"></i>
+                    	<span class="nav-label">系统工具</span> 
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="/tool/build" data-index="32">表单构建</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/tool/gen" data-index="33">代码生成</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/tool/swagger" data-index="34">系统接口</a>
+							
+							
+						</li>
+					</ul>
+                </li>
+                <li>
+                	<a href="#">
+                		<i class="fa fa-video-camera"></i>
+                    	<span class="nav-label">系统监控</span> 
+                    	<span class="fa arrow"></span>
+                	</a>
+                    <ul class="nav nav-second-level collapse">
+						<li>
+							<a class="menuItem" href="/monitor/online" data-index="35">在线用户</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/monitor/job" data-index="36">定时任务</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/monitor/data" data-index="37">数据监控</a>
+							
+							
+						</li>
+						<li>
+							<a class="menuItem" href="/monitor/server" data-index="38">服务监控</a>
+							
+							
+						</li>
+					</ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">实例演示</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li> <a>表单<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/demo/form/button" data-index="39">按钮</a></li>
+								<li><a class="menuItem" href="/demo/form/grid" data-index="40">栅格</a></li>
+								<li><a class="menuItem" href="/demo/form/select" data-index="41">下拉框</a></li>
+								<li><a class="menuItem" href="/demo/form/timeline" data-index="42">时间轴</a></li>
+								<li><a class="menuItem" href="/demo/form/basic" data-index="43">基本表单</a></li>
+								<li><a class="menuItem" href="/demo/form/cards" data-index="44">卡片列表</a></li>
+								<li><a class="menuItem" href="/demo/form/jasny" data-index="45">功能扩展</a></li>
+								<li><a class="menuItem" href="/demo/form/sortable" data-index="46">拖动排序</a></li>
+								<li><a class="menuItem" href="/demo/form/tabs_panels" data-index="47">选项卡 &amp; 面板</a></li>
+								<li><a class="menuItem" href="/demo/form/validate" data-index="48">表单校验</a></li>
+								<li><a class="menuItem" href="/demo/form/wizard" data-index="49">表单向导</a></li>
+								<li><a class="menuItem" href="/demo/form/upload" data-index="50">文件上传</a></li>
+								<li><a class="menuItem" href="/demo/form/datetime" data-index="51">日期和时间</a></li>
+								<li><a class="menuItem" href="/demo/form/summernote" data-index="52">富文本编辑器</a></li>
+								<li><a class="menuItem" href="/demo/form/duallistbox" data-index="53">左右互选组件</a></li>
+								<li><a class="menuItem" href="/demo/form/autocomplete" data-index="54">搜索自动补全</a></li>
+							</ul>
+                        </li>
+                        <li> <a>表格<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/demo/table/search" data-index="55">查询条件</a></li>
+								<li><a class="menuItem" href="/demo/table/footer" data-index="56">数据汇总</a></li>
+								<li><a class="menuItem" href="/demo/table/groupHeader" data-index="57">组合表头</a></li>
+								<li><a class="menuItem" href="/demo/table/export" data-index="58">表格导出</a></li>
+								<li><a class="menuItem" href="/demo/table/remember" data-index="59">翻页记住选择</a></li>
+								<li><a class="menuItem" href="/demo/table/pageGo" data-index="60">跳转至指定页</a></li>
+								<li><a class="menuItem" href="/demo/table/params" data-index="61">自定义查询参数</a></li>
+								<li><a class="menuItem" href="/demo/table/multi" data-index="62">初始多表格</a></li>
+								<li><a class="menuItem" href="/demo/table/button" data-index="63">点击按钮加载表格</a></li>
+								<li><a class="menuItem" href="/demo/table/fixedColumns" data-index="64">表格冻结列</a></li>
+								<li><a class="menuItem" href="/demo/table/event" data-index="65">自定义触发事件</a></li>
+								<li><a class="menuItem" href="/demo/table/detail" data-index="66">表格细节视图</a></li>
+								<li><a class="menuItem" href="/demo/table/child" data-index="67">表格父子视图</a></li>
+								<li><a class="menuItem" href="/demo/table/image" data-index="68">表格图片预览</a></li>
+								<li><a class="menuItem" href="/demo/table/curd" data-index="69">动态增删改查</a></li>
+								<li><a class="menuItem" href="/demo/table/reorder" data-index="70">表格拖拽操作</a></li>
+								<li><a class="menuItem" href="/demo/table/editable" data-index="71">表格行内编辑</a></li>
+								<li><a class="menuItem" href="/demo/table/other" data-index="72">表格其他操作</a></li>
+							</ul>
+                        </li>
+                        <li> <a>弹框<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/demo/modal/dialog" data-index="73">模态窗口</a></li>
+								<li><a class="menuItem" href="/demo/modal/layer" data-index="74">弹层组件</a></li>
+								<li><a class="menuItem" href="/demo/modal/table" data-index="75">弹层表格</a></li>
+							</ul>
+                        </li>
+                        <li> <a>操作<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/demo/operate/table" data-index="76">表格</a></li>
+								<li><a class="menuItem" href="/demo/operate/other" data-index="77">其他</a></li>
+							</ul>
+                        </li>
+                        <li> <a>报表<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/demo/report/echarts" data-index="78">百度ECharts</a></li>
+								<li><a class="menuItem" href="/demo/report/peity" data-index="79">peity</a></li>
+								<li><a class="menuItem" href="/demo/report/sparkline" data-index="80">sparkline</a></li>
+								<li><a class="menuItem" href="/demo/report/metrics" data-index="81">图表组合</a></li>
+							</ul>
+                        </li>
+                        <li> <a>图标<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse">
+								<li><a class="menuItem" href="/demo/icon/fontawesome" data-index="82">Font Awesome</a></li>
+								<li><a class="menuItem" href="/demo/icon/glyphicons" data-index="83">Glyphicons</a></li>
+							</ul>
+                        </li>
+                        <li>
+	                        <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">四层菜单 </span><span class="fa arrow"></span></a>
+	                        <ul class="nav nav-second-level collapse">
+	                            <li>
+	                                <a href="#" id="damian">三级菜单1<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level collapse">
+	                                    <li>
+	                                        <a href="#">四级菜单1</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">四级菜单2</a>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                            <li><a href="#">三级菜单2</a></li>
+	                        </ul>
+	                    </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 937px;"></div><div class="slimScrollRail" style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.9; z-index: 90; right: 1px;"></div></div>
+    </nav>
+    <!--左侧导航结束-->
+    
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2" style="color:#FFF;" href="#" title="收起菜单">
+                    	<i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right welcome-message">
+               
+	                <li><a title="全屏显示" href="javascript:void(0)" id="fullScreen"><i class="fa fa-arrows-alt"></i> 全屏显示</a></li>
+                    <li class="dropdown user-menu">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown">
+							<img src="/img/profile.jpg" class="user-image">
+							<span class="hidden-xs">admin</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="mt5">
+								<a href="/system/user/profile" class="menuItem" data-index="84">
+								<i class="fa fa-user"></i> 个人中心</a>
+							</li>
+							<li>
+								<a onclick="resetPwd()">
+								<i class="fa fa-key"></i> 修改密码</a>
+							</li>
+							<li>
+								<a onclick="switchSkin()">
+								<i class="fa fa-dashboard"></i> 切换主题</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="logout">
+								<i class="fa fa-sign-out"></i> 退出登录</a>
+							</li>
+						</ul>
+					</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row content-tabs">
+            <button class="roll-nav roll-left tabLeft">
+                <i class="fa fa-backward"></i>
+            </button>
+            <nav class="page-tabs menuTabs">
+                <div class="page-tabs-content" style="margin-left: 0px;">
+                    <a href="javascript:;" class="menuTab" data-id="/system/main">首页</a>
+                <a href="javascript:;" class="active menuTab" data-id="/coupon/apprange">礼券模板定义 <i class="fa fa-times-circle"></i></a></div>
+            </nav>
+            <button class="roll-nav roll-right tabRight">
+                <i class="fa fa-forward"></i>
+            </button>
+            <a href="javascript:void(0);" class="roll-nav roll-right tabReload"><i class="fa fa-refresh"></i> 刷新</a>
+        </div>
+        
+        <a id="ax_close_max" class="ax_close_max" href="#" title="关闭全屏"> <i class="fa fa-times-circle-o"></i> </a>
+                    
+        <div class="row mainContent" id="content-main">
+            <iframe class="RuoYi_iframe" name="iframe0" width="100%" height="100%" data-id="/system/main" src="/system/main" frameborder="0" seamless="" style="display: none;"></iframe>
+        <iframe class="RuoYi_iframe" name="iframe26" width="100%" height="100%" src="/coupon/apprange" frameborder="0" data-id="/coupon/apprange" seamless=""></iframe></div>
+        <div class="footer">
+            <div class="pull-right">© 2019 RuoYi Copyright </div>
+        </div>
+    </div>
+    <!--右侧部分结束-->
+</div>
+<!-- 全局js -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/js/jquery.contextMenu.min.js"></script>
+<script src="/ajax/libs/blockUI/jquery.blockUI.js"></script>
+<script src="/ajax/libs/layer/layer.min.js"></script>
+<script src="/ruoyi/js/ry-ui.js?v=4.1.0"></script>
+<script src="/ruoyi/js/common.js?v=4.1.0"></script>
+<script src="/ruoyi/index.js"></script>
+<script src="/ajax/libs/fullscreen/jquery.fullscreen.js"></script>
+<script>
+	var ctx = "\/";
+	var skin = storage.get("skin");
+	// 本地主题优先，未设置取系统配置
+	if($.common.isNotEmpty(skin)){
+		$("body").addClass(skin.split('|')[0]);
+		$("body").addClass(skin.split('|')[1]);
+	} else {
+		var sideTheme = "theme-dark";
+		var skinName = "skin-blue";
+		$("body").addClass(sideTheme);
+		$("body").addClass(skinName);
+	}
+
+	/* 用户管理-重置密码 */
+	function resetPwd() {
+	    var url = ctx + 'system/user/profile/resetPwd';
+	    $.modal.open("重置密码", url, '770', '380');
+	}
+	/* 切换主题 */
+	function switchSkin() {
+	    layer.open({
+			type : 2,
+			shadeClose : true,
+			title : "切换主题",
+			area : ["530px", "386px"],
+			content : [ctx + "system/switchSkin", 'no']
+		})
+	}
+
+	// 排除非左侧菜单链接
+	var excludesUrl = ["/system/user/profile"];
+
+	$(function() {
+	    var hash = location.hash;
+	    if (hash !== '') {
+	        var url = hash.substring(1, hash.length);
+	        $('a[href$="' + decodeURI(url) + '"]').click();
+	        if($.inArray(url, excludesUrl)){
+	            $('a[href$="' + url + '"]').parent("li").addClass("selected").parents("li").addClass("active").end().parents("ul").addClass("in");
+	        }
+	    }
+	});
+</script>
+
+
+<ul class="context-menu-list context-menu-root" style="display: none;"><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-close"><span>关闭当前</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-window-close-o"><span>关闭其他</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-reply"><span>关闭左侧</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-share"><span>关闭右侧</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-window-close"><span>全部关闭</span></li><li class="context-menu-item context-menu-separator context-menu-not-selectable"></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-arrows-alt"><span>全屏显示</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-refresh"><span>刷新页面</span></li><li class="context-menu-item context-menu-icon context-menu-icon--fa fa fa-link"><span>新窗口打开</span></li></ul></body>
+</body>
+</html>

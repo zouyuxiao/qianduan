@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>获取session</title>
+	<meta charset="utf-8">
+	<script src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="jquerysession.js"></script>
+	<!-- 
+
+		1、不指定cookie过期时间
+		$.session.set('key', 'value')
+		2、设置cookie过期时间
+		$.session.set('key', 'value', true)
+		注：默认过期时间为2周
+		获取数据
+		$.session.get('key');
+		删除数据
+		$.session.remove('key');
+		清空所有数据
+		$.session.clear();
+
+	 -->
+</head>
+<body>
+	<h1>session测试</h1>
+</body>
+<script type="text/javascript">
+	$.session.set('name', '测试')
+	var getcookie = $.session.get('name');
+	console.log(getcookie);
+</script>
+</html>
