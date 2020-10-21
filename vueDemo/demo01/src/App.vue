@@ -4,7 +4,7 @@
     <div>
             <router-link to="footer">hello</router-link>
             <router-link to="@/components/child">hello</router-link>
-            <router-view/>
+            <!-- <router-view/> -->
         </div>
     <router-view/>
   </div>
